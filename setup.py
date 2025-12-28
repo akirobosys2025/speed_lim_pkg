@@ -15,7 +15,7 @@ setup(
     zip_safe=True,
     maintainer='Aki Moto',
     maintainer_email='aki.robosys2025@gmail.com',
-    description='Limits the speed status sent to cmd_vel.',
+    description='Limits the speed status sent to cmd_vel',
     license='BSD-3-Clause',
     extras_require={
         'test': [

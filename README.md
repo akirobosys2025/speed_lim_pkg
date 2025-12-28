@@ -17,6 +17,11 @@ $ cd ~/ros2_ws
 $ colcon build
 $ source install/setup.bash 　# 新しいターミナルを開くたびに実行
 ```  
+ホームディレクトリの.bashrcファイルのexport ROS_LOCALHOST_ONLY=1の下に，  
+```
+source ~/ros2_ws/install/setup.bash  
+```
+を追加すると何度もsource install/setup.bashを打つ手間が省ける．
 
 ## lim_node
 入力された速度指令を監視し，設定された最大速度を超えないよう制限を行う．  

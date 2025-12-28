@@ -4,12 +4,18 @@
 ## 導入
 次の手順でリポジトリをダウンロードできます．  
 
-'''  
+```
 # ワークスペースを作成し，srcへ移動してリポジトリをダウンロードしてください．
 $ mkdir -p ~/ros2_ws/src
 $ cd ~/ros2_ws/src
 $ git clone git@github.com:akirobosys2025/speed_lim_pkg.git
-'''  
+```
+```
+# ワークスペースのルートに移動しビルドを行う．
+$ cd ~/ros2_ws
+$ colcon build
+$ source install/setup.bash 　# 新しいターミナルを開くたびに実行
+```  
 
 ## lim_node
 入力された速度指令を監視し，設定された最大速度を超えないよう制限を行う．  

@@ -18,6 +18,15 @@
 | `/speed_limit_reason` | std_msgs/String | 速度制限の理由 |
 | `/speed_limit_status` | std_msgs/String | 現在の状態 |
 
+### 状態
+lim_nodeでは，速度制限の処理を値だけでなく，運転状態を３つの状態として管理している．
+
+| 状態 | 説明 |
+|---|---|
+| `NORMAL` | 速度制限が発生していない通常状態 |
+| `LIMITED` | 最大速度を超えたため制限が発生している状態 |
+| `EMERGENCY` | 非常停止が有効になっている状態 |
+
 ## LICENSE
 - このソフトウェアパッケージは，３条項BSDライセンスの下，再頒布および使用が許可されます．
 - © 2025 Aki Moto

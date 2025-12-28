@@ -5,14 +5,14 @@
 次の手順でリポジトリをダウンロードできます．  
 
 ```
-# ワークスペースを作成し，srcへ移動してリポジトリをダウンロードしてください．
+# ワークスペースを作成し，srcへ移動してリポジトリをダウンロード
 $ mkdir -p ~/ros2_ws/src
 $ cd ~/ros2_ws/src
 $ git clone git@github.com:akirobosys2025/speed_lim_pkg.git
 ```
-ノードの実行前にビルドを行って下さい．
+パッケージを動かす前にビルドして下さい．
 ```
-# ワークスペースのルートに移動しビルドを行う．
+# ワークスペースのルートに移動
 $ cd ~/ros2_ws
 $ colcon build
 $ source install/setup.bash 　# 新しいターミナルを開くたびに実行

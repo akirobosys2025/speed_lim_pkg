@@ -10,6 +10,7 @@ $ mkdir -p ~/ros2_ws/src
 $ cd ~/ros2_ws/src
 $ git clone git@github.com:akirobosys2025/speed_lim_pkg.git
 ```
+ノードの実行前にビルドを行って下さい．
 ```
 # ワークスペースのルートに移動しビルドを行う．
 $ cd ~/ros2_ws

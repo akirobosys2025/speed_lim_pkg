@@ -34,9 +34,9 @@ echo "[TEST] Publishing cmd_vel..."
 ros2 topic pub --once /cmd_vel geometry_msgs/Twist \
 "{linear: {x: 0.5}, angular: {z: 1.0}}"
 
-wait $CHECKER_PID || RES = 1
+wait $CHECKER_PID || RES=1
 
-if test "${RES}" = 0 ; then
+if test "${RES}"=0 ; then
     echo "PASS"
 else
     echo "FAILED"

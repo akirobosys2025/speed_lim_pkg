@@ -27,10 +27,11 @@ class StatusChecker(Node):
             'lin_out=0.5' in msg.data and 
             'ang_out=1.0' in msg.data
         )
+        res = None
         if result:
-            res=0
+            res = 0
         else:
-            res=1
+            res = 1
 
         self.done = True
         self.get_logger().info('Result received, shutting down...')

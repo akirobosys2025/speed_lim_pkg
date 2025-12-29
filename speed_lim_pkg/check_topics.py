@@ -29,6 +29,7 @@ class StatusChecker(Node):
         )
 
         self.done = True
+        sys.exit(0 if self.result else 1)
         self.get_logger().info('Result received, shutting down...')
 
 def main():

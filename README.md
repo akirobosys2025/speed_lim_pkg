@@ -3,7 +3,7 @@
 ROS2のパッケージです．  
 `lim_node` は `/cmd_vel` や `/emergency_stop` などのトピックを監視し，  
 走行状態に応じて速度制限状態（`NORMAL` / `LIMITED` / `EMERGENCY`）を判定し，  
-その結果を `/speed_limit_status` として出力します．
+その結果を `/speed_limit_status` に出力します．
 
 ## lim_node
 入力された速度指令を監視し，設定された最大速度を超えないよう制限を行います．  

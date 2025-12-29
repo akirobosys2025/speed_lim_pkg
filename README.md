@@ -27,6 +27,10 @@ lim_nodeでは，速度制限の処理を値だけでなく，運転状態を３
 | `LIMITED` | 最大速度を超えたため制限が発生している状態 |
 | `EMERGENCY` | 非常停止が有効になっている状態 |
 
+## 開発環境
+- OS: Ubuntu 22.04 LTS
+- 開発言語: Python 3.10
+
 ## LICENSE
 - このソフトウェアパッケージは，３条項BSDライセンスの下，再頒布および使用が許可されます．
 - このパッケージには[上田隆一のコンテナ](https://hub.docker.com/repository/docker/ryuichiueda/ubuntu22.04-ros2)(© Ryuichi Ueda)が含まれています．

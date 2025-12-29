@@ -19,7 +19,7 @@
 | `/speed_limit_status` | std_msgs/String | 現在の状態 |
 
 ### 状態
-lim_nodeでは，速度制限の処理を値だけでなく，運転状態を３つの状態として管理しています． 
+lim_nodeでは，速度制限の処理を値だけでなく，運転状態を３つの状態として管理しています．  
 cmd_velトピックに流れた値が両方ともlinear: {x: 0.5}，angular: {z: 1.0}以下だとNORMALの状態を返し，どちらかの値が上回る場合はLIMITEDの状態になります．  
 EMERGENCYはemergency_stopトピックからメッセージが送られた場合のみに変化する状態です．  
 

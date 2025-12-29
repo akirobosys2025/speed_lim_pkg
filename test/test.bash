@@ -6,6 +6,9 @@ PASS=0
 FAIL=1
 RES=$PASS
 
+source /opt/ros/humble/setup.bash
+source ~/ros2_ws/install/setup.bash
+
 echo "[TEST] Starting ROS2 daemon..."
 ros2 daemon start >/dev/null 2>&1 || true
 sleep 2
@@ -34,7 +37,7 @@ sleep 1
 
 wait $CHECKER_PID || RES=$FAIL
 
-if [ "$RES" -eq "$PASS" ]; then
+if test "${RES}" = 0 ; then
     echo "PASS"
 else
     echo "FAILED"

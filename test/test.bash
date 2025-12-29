@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 # SPDX-FileCopyrightText: 2025 Aki Moto aki.robosys2025@gmail.com
 # SPDX-License-Indentifier: BSD-3-Clause
 

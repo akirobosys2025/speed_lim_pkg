@@ -22,14 +22,13 @@ class StatusChecker(Node):
 
         print(msg.data)
 
-        self.result = (
+        result = (
             'limited=True' in msg.data and 
             'lin_out=0.5' in msg.data and 
             'ang_out=1.0' in msg.data
         )
 
         self.done = True
-        sys.exit(0 if self.result else 1)
         self.get_logger().info('Result received, shutting down...')
 
 def main():
@@ -40,6 +39,7 @@ def main():
         rclpy.spin_once(node, timeout_sec=1.0)
     
     rclpy.shutdown()
+    sys.exit()
 
 if __name__ == '__main__':
     main()

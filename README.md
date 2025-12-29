@@ -14,9 +14,9 @@
 ### Publish
 | トピック名 | 型 | 説明 |
 |----------|----|----|
-| `/cmd_vel_safe` | geometry_msgs/Twist | 制限後の速度指令 |
-| `/speed_limit_reason` | std_msgs/String | 速度制限の理由 |
-| `/speed_limit_status` | std_msgs/String | 現在の状態 |
+| `/cmd_vel_safe` | `geometry_msgs/Twist` | 制限後の速度指令 |
+| `/speed_limit_reason` | `std_msgs/String` | 速度制限の理由 |
+| `/speed_limit_status` | `std_msgs/String` | 現在の状態 |
 
 ### 状態
 `lim_node`では，速度制限の処理を値だけでなく，運転状態を３つの状態として管理しています．  

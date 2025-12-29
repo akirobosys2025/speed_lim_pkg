@@ -18,7 +18,7 @@ jobs:
       - name: Build workspace
         run: |
           mkdir -p ros2_ws/src
-          cp -r . ros2_ws/src/speed_lim_pkg
+          cp -r ros2_ws/src/speed_lim_pkg
           cd ros2_ws
           source /opt/ros/humble/setup.bash
           colcon build

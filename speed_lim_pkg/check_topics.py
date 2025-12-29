@@ -27,6 +27,10 @@ class StatusChecker(Node):
             'lin_out=0.5' in msg.data and 
             'ang_out=1.0' in msg.data
         )
+        if result:
+            res=0
+        else:
+            res=1
 
         self.done = True
         self.get_logger().info('Result received, shutting down...')
@@ -39,7 +43,7 @@ def main():
         rclpy.spin_once(node, timeout_sec=1.0)
     
     rclpy.shutdown()
-    sys.exit()
+    sys.exit(res)
 
 if __name__ == '__main__':
     main()

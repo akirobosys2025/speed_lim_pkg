@@ -11,21 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: build and test
-        uses: ros-tooling/setup-ros@v0.7
-        with:
-          required-ros-distributions: humble
-
-      - name: Build workspace
         run: |
-          mkdir -p ros2_ws/src
-          cp -r ros2_ws/src/speed_lim_pkg
-          cd ros2_ws
-          source /opt/ros/humble/setup.bash
-          colcon build
-
-      - name: Run integration test
-        run: |
-          cd ros2_ws
-          source install/setup.bash
-          bash src/speed_lim_pkg/test/test.bash
-
+          rsync -av ./ root?ros2_ws/src/speed_lim_pkg/
+          cd /root/ros2_ws
+          bash -xv ./src/mypkg/test/test.bash /root

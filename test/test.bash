@@ -22,13 +22,13 @@ echo "[TEST] Running status checker..."
 ros2 run speed_lim_pkg check_topics &
 CHECKER_PID=$!
 
-sleep 10
+sleep 5
 
 echo "[TEST] Starting limiter node..."
 ros2 run speed_lim_pkg lim_node >/dev/null 2>&1 &
 LIMITER_PID=$!
 
-sleep 10
+sleep 5
 
 echo "[TEST] Publishing cmd_vel..."
 ros2 topic pub --once /cmd_vel geometry_msgs/Twist \

@@ -4,6 +4,8 @@ from rclpy.node import Node
 from std_msgs.msg import String
 import sys
 
+res = None
+
 class StatusChecker(Node):
     def __init__(self):
         super().__init__('status_checker')
@@ -27,14 +29,11 @@ class StatusChecker(Node):
             'lin_out=0.5' in msg.data and 
             'ang_out=1.0' in msg.data
         )
-        res = None
-        if result:
-            res = 0
-        else:
-            res = 1
-
+        ok = (msg.data == 'NORMAL')
         self.done = True
         self.get_logger().info('Result received, shutting down...')
+        rclpy.shutdown()
+        sys.exit(0 if ok else 1)
 
 def main():
     rclpy.init()
@@ -42,9 +41,6 @@ def main():
 
     while rclpy.ok() and not node.done:
         rclpy.spin_once(node, timeout_sec=1.0)
-    
-    rclpy.shutdown()
-    sys.exit(res)
 
 if __name__ == '__main__':
     main()

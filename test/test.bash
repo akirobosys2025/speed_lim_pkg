@@ -48,6 +48,8 @@ run_case () {
       EMERGENCY)
         ros2 topic pub --once /emergency_stop std_msgs/Bool \
         "{data: true}"
+	ros2 topic pub --once /cmd_vel geometry_msgs/Twist \
+	"{linear: {x: 0.5}, angular: {z: 1.0}}" &
         ;;
     esac
 

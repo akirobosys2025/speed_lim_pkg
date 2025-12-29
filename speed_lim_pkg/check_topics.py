@@ -10,12 +10,7 @@ import sys
 class StatusChecker(Node):
     def __init__(self):
         super().__init__('status_checker')
-        self.sub = self.create_subscription(
-            String,
-            '/speed_limit_status',
-            self.cb,
-            10
-        )
+        self.sub = self.create_subscription(String, '/speed_limit_status', self.cb, 10)
         self.done = False
 
     def cb(self, msg: String):

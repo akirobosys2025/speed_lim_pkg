@@ -7,7 +7,6 @@ from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Bool, String
 
-
 class SpeedLimit(Node):
     def __init__(self):
         super().__init__('speed_limit')
@@ -20,16 +19,17 @@ class SpeedLimit(Node):
 
         self.emergency = False
 
-        self.create_subscription(Twist, '/cmd_vel', self.cmd_callback, 10)
-        self.create_subscription(Bool, '/emergency_stop', self.emergency_callback, 10)
+        self.create_subscription(Twist, '/cmd_vel', self.cmd_callback, 5)
+        self.create_subscription(Bool, '/emergency_stop', self.emergency_callback, 5)
 
-        self.cmd_pub = self.create_publisher(Twist, '/cmd_vel_safe', 10)
-        self.reason_pub = self.create_publisher(String, '/speed_limit_reason', 10)
-        self.status_pub = self.create_publisher(String, '/speed_limit_status', 10)
+        self.cmd_pub = self.create_publisher(Twist, '/cmd_vel_safe', 5)
+        self.reason_pub = self.create_publisher(String, '/speed_limit_reason', 5)
+        self.status_pub = self.create_publisher(String, '/speed_limit_status', 5)
 
         self.get_logger().info('Speed limiter node started')
 
     def emergency_callback(self, msg):
+        self.get_logger().info("emergency_callback CALLED")
         self.emergency = msg.data
 
     def limit(self, value, max_value):
@@ -45,6 +45,7 @@ class SpeedLimit(Node):
             output.angular.z = 0.0
             reason.data = 'Emergency stop active'
             status.data = 'EMERGENCY'
+            self.emergency = False
         else:
             output.linear.x = self.limit(msg.linear.x, self.max_linear)
             output.angular.z = self.limit(msg.angular.z, self.max_angular)

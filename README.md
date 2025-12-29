@@ -1,7 +1,7 @@
 # speed_lim_pkg
 このリポジトリは`cmd_vel`を監視して速度制限や緊急停止を行うための  
 ROS2のパッケージです．  
-`lim_node` は `/cmd_vel` や `/emergency_stop` などの入力トピックを監視し，  
+`lim_node` は `/cmd_vel` や `/emergency_stop` などのトピックを監視し，  
 走行状態に応じて速度制限状態（`NORMAL` / `LIMITED` / `EMERGENCY`）を判定し，  
 その結果を `/speed_limit_status` として出力します．
 

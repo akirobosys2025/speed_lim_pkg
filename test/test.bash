@@ -28,7 +28,7 @@ sleep 5
 
 echo "[TEST] Publishing cmd_vel..."
 ros2 topic pub --once /cmd_vel geometry_msgs/Twist \
-"{linear: {x: 0.4}, angular: {z: 0.1}}"
+"{linear: {x: 0.5}, angular: {z: 1.0}}"
 
 sleep 1
 

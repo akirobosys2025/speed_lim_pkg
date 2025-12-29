@@ -29,4 +29,5 @@ lim_nodeでは，速度制限の処理を値だけでなく，運転状態を３
 
 ## LICENSE
 - このソフトウェアパッケージは，３条項BSDライセンスの下，再頒布および使用が許可されます．
+- このパッケージには[上田隆一のコンテナ](https://hub.docker.com/repository/docker/ryuichiueda/ubuntu22.04-ros2)が含まれています．
 - © 2025 Aki Moto

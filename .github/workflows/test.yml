@@ -1,9 +1,5 @@
 name: ROS2 Integration Test
-
-on:
-  push:
-  pull_request:
-
+on: push
 jobs:
   test:
     runs-on: ubuntu-22.04

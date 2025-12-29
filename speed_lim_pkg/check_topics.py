@@ -32,7 +32,7 @@ class StatusChecker(Node):
         ok = (msg.data == 'NORMAL')
         self.done = True
         self.get_logger().info('Result received, shutting down...')
-        rclpy.shutdown()
+
         sys.exit(0 if ok else 1)
 
 def main():
@@ -41,6 +41,8 @@ def main():
 
     while rclpy.ok() and not node.done:
         rclpy.spin_once(node, timeout_sec=1.0)
+
+    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()

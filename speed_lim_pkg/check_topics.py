@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# SPDX-FileCopyrightText: 2025 Aki Moto aki.robosys2025@gmail.com
+# SPDX-License-Indentifier: BSD-3-Clause
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String

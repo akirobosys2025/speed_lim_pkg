@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
-# SPDX-FileCopyrightText: 2025 Aki Moto
-# SPDX-License-Identifier: BSD-3-Clause
+#!/bin/bash
+# SPDX-FileCopyrightText: 2025 Aki Moto aki.robosys2025@gmail.com
+# SPDX-License-Indentifier: BSD-3-Clause
 
 set -e
 

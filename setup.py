@@ -28,6 +28,7 @@ setup(
     entry_points={
         'console_scripts': [
             'lim_node = speed_lim_pkg.lim_node:main',
+            'check_topics = speed_lim_pkg.check_topics:main',
         ],
     },
 )

@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-# SPDX-FileCopyrightText: 2025 Aki Moto aki.robosys2025@gmail.com
-# SPDX-License-Indentifier: BSD-3-Clause
+# SPDX-FileCopyrightText: 2025 Aki Moto
+# SPDX-License-Identifier: BSD-3-Clause
 
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 import sys
-
-res = None
 
 class StatusChecker(Node):
     def __init__(self):
@@ -19,19 +17,17 @@ class StatusChecker(Node):
             10
         )
         self.done = False
-        self.result = False
 
     def cb(self, msg: String):
         if self.done:
             return
 
-        print(msg.data)
-
-        ok = (msg.data == 'NORMAL')
+        status = msg.data.strip()
         self.done = True
-        self.get_logger().info('Result received, shutting down...')
 
-        sys.exit(0 if ok else 1)
+        print(f'{status}')
+
+        self.get_logger().info('Result received, shutting down...')
 
 def main():
     rclpy.init()

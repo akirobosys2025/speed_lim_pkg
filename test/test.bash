@@ -6,8 +6,9 @@ PASS=0
 FAIL=1
 RES=$PASS
 
-source /opt/ros/humble/setup.bash
-source ~/ros2_ws/install/setup.bash
+cd ~/ros2_ws
+colcon build
+source install/setup.bash
 
 echo "[TEST] Running status checker..."
 ros2 run speed_lim_pkg check_topics &

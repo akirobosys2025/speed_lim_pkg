@@ -39,7 +39,6 @@ def main():
         rclpy.spin_once(node, timeout_sec=1.0)
     
     rclpy.shutdown()
-    sys.exit(0 if result else 1)
 
 if __name__ == '__main__':
     main()

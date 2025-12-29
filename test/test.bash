@@ -34,8 +34,6 @@ sleep 1
 
 wait $CHECKER_PID || RES=$FAIL
 
-echo "$RES"
-
 if [ "$RES" -eq "$PASS" ]; then
     echo "PASS"
 else

@@ -8,8 +8,8 @@
 ### Subscribe
 | トピック名 | 型 | 説明 |
 |----------|----|----|
-| `/cmd_vel` | geometry_msgs/Twist | 元の速度指令 |
-| `/emergency_stop` | std_msgs/Bool | 非常停止フラグ |
+| `/cmd_vel` | `geometry_msgs/Twist` | 元の速度指令 |
+| `/emergency_stop` | `std_msgs/Bool` | 非常停止フラグ |
 
 ### Publish
 | トピック名 | 型 | 説明 |

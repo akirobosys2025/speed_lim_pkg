@@ -24,11 +24,6 @@ class StatusChecker(Node):
 
         print(msg.data)
 
-        result = (
-            'limited=True' in msg.data and 
-            'lin_out=0.5' in msg.data and 
-            'ang_out=1.0' in msg.data
-        )
         ok = (msg.data == 'NORMAL')
         self.done = True
         self.get_logger().info('Result received, shutting down...')

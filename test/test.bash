@@ -6,11 +6,11 @@ set -e
 
 RES=0
 
-cd ~/ros2_ws
+cd /root/ros2_ws
 colcon build
 source /opt/ros/humble/setup.bash
 source install/setup.bash
-source ~/.bashrc
+source /root/.bashrc
 
 cleanup() {
     echo "[TEST] Cleanup"
